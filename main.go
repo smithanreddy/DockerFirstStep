@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"math"
 )
 
 func main() {
@@ -16,6 +17,8 @@ func main() {
 	log.Println("The Area of a Circle whose radius is", radius, "is", Area, "cm^2.")
 
 	findlargenumber()
+
+	floor()
 }
 
 // Check if given number is odd or even
@@ -51,4 +54,15 @@ func findlargenumber() {
 	if third >= first && third >= second {
 		log.Println(third, "is Largest among three numbers")
 	}
+}
+
+func floor() {
+	var input float64
+	var result float64
+	log.Println("Enter a floating-point number: ")
+	fmt.Scanf("%f", &input)
+
+	result = math.Floor(input)
+
+	log.Printf("The floor value is %.0f", result)
 }
