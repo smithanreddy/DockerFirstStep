@@ -25,6 +25,8 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 	randomNumber := generateRandomNumber(1, 100)
 	fmt.Printf("Random number: %d\n", randomNumber)
+
+	simpleInterest()
 }
 
 // Check if given number is odd or even
@@ -75,4 +77,23 @@ func floor() {
 
 func generateRandomNumber(min, max int) int {
 	return rand.Intn(max-min+1) + min
+}
+
+func simpleInterest() {
+	var principal float64 = 100000
+	var rate float64
+	var time float64
+
+	log.Println("Enter the principal amount: ")
+	fmt.Scanln(&principal)
+
+	log.Println("Enter the rate of interest (in percentage): ")
+	fmt.Scanln(&rate)
+
+	log.Println("Enter the time (in years): ")
+	fmt.Scanln(&time)
+
+	simpleInterest := (principal * rate * time) / 100.0
+
+	log.Println("Simple Interest: %.2f\n", simpleInterest)
 }
