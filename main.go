@@ -14,6 +14,8 @@ func main() {
 	fmt.Scanln(&radius)
 	Area = areaOfCircle(radius)
 	log.Println("The Area of a Circle whose radius is", radius, "is", Area, "cm^2.")
+
+	findlargenumber()
 }
 
 // Check if given number is odd or even
@@ -27,4 +29,26 @@ func OddEven(num int) {
 
 func areaOfCircle(radius float64) float64 {
 	return (22 / 7.0) * (radius * radius)
+}
+
+func findlargenumber() {
+	log.Println("Enter first number :")
+	var first int
+	fmt.Scanln(&first)
+	log.Println("Enter second number :")
+	var second int
+	fmt.Scanln(&second)
+	log.Println("Enter third number :")
+	var third int
+	fmt.Scanln(&third)
+	/* check the boolean condition using if statement */
+	if first >= second && first >= third {
+		log.Println(first, "is Largest among three numbers.") /* if condition is true then print the following */
+	}
+	if second >= first && second >= third {
+		log.Println(second, "is Largest among three numbers.")
+	}
+	if third >= first && third >= second {
+		log.Println(third, "is Largest among three numbers")
+	}
 }
