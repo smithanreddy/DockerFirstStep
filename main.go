@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"math"
+	"math/rand"
+	"time"
 )
 
 func main() {
@@ -19,6 +21,10 @@ func main() {
 	findlargenumber()
 
 	floor()
+
+	rand.Seed(time.Now().UnixNano())
+	randomNumber := generateRandomNumber(1, 100)
+	fmt.Printf("Random number: %d\n", randomNumber)
 }
 
 // Check if given number is odd or even
@@ -65,4 +71,8 @@ func floor() {
 	result = math.Floor(input)
 
 	log.Printf("The floor value is %.0f", result)
+}
+
+func generateRandomNumber(min, max int) int {
+	return rand.Intn(max-min+1) + min
 }
